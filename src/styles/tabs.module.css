@@ -1,0 +1,99 @@
+/* Tabs */
+.tabBar {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky;
+  top: 61px; /* Just below MenuBar */
+  z-index: 9;
+}
+
+.tabBarInner {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.tabBtn {
+  background: none;
+  border: none;
+  padding: 16px 4px;
+  font: inherit;
+  font-size: 15px;
+  cursor: pointer;
+  color: var(--text);
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.tabBtn:hover {
+  color: var(--text-h);
+}
+
+.tabBtnActive {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.tabBtnActive::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
+}
+
+.tabBtnHasUnread {
+  font-weight: 700;
+}
+
+/* Sync icon */
+.syncActions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.syncLabel {
+  font-size: 13px;
+  color: var(--text);
+}
+
+.syncIcon {
+  display: flex;
+  align-items: center;
+}
+
+.fadeOut {
+  animation: fadeOutAnim 1s ease-in-out 4s forwards;
+}
+
+@keyframes fadeOutAnim {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 640px) {
+  .tabBarInner {
+    padding: 0 12px;
+    gap: 16px;
+  }
+  .tabBtn {
+    padding: 10px 4px;
+    font-size: 14px;
+  }
+}
