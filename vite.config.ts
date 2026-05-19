@@ -2,10 +2,12 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import dotenv from 'dotenv'
 
+import { cloudflare } from "@cloudflare/vite-plugin";
+
 dotenv.config()
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), cloudflare()],
   server: {
     host: ['localhost'],
   },
