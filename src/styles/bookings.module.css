@@ -1,0 +1,312 @@
+/* Bookings & History */
+.bookingsPage {
+  padding-top: 24px;
+}
+
+.bookingsTitle {
+  max-width: 800px;
+  margin: 0 auto 20px;
+  color: var(--text-h);
+  font-size: 20px;
+}
+
+.bookingsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto 24px;
+}
+
+.bookingsControls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.bookingsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.bookingCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-card);
+  padding: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bookingCard:hover {
+  transform: translateX(4px);
+  border-color: var(--accent-border);
+}
+
+.bookingCardPast {
+  opacity: 0.8;
+  background: color-mix(in srgb, var(--bg) 95%, #000 5%);
+}
+
+.bookingMain {
+  display: flex;
+  flex: 1;
+  gap: 24px;
+}
+
+.bookingDateTime {
+  min-width: 120px;
+}
+
+.bookingDate {
+  font-weight: 700;
+  color: var(--text-h);
+  font-size: 14px;
+}
+
+.bookingTime {
+  font-size: 13px;
+  color: var(--text);
+  margin-top: 2px;
+}
+
+.bookingDetails {
+  flex: 1;
+}
+
+.bookingCategory {
+  font-weight: 600;
+  color: var(--text-h);
+  font-size: 16px;
+}
+
+.bookingCoach {
+  font-size: 13px;
+  color: var(--text);
+  margin-top: 2px;
+}
+
+.bookingLocation {
+  font-size: 11px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+}
+
+.bookingActions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: auto;
+}
+
+/* ── Booking Action Buttons ── */
+.bookingActionBtn {
+  padding: 8px 12px;
+  font-size: 13px;
+  border-radius: 6px;
+}
+
+.btnInvite {
+  background-color: var(--accent-bg);
+  color: var(--accent);
+  border: 1px solid var(--accent-border);
+}
+
+.btnUnsubscribe {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.btnGreenOutline {
+  background-color: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.btnGreenOutline:hover:not(:disabled) {
+  background-color: rgba(34, 197, 94, 0.2);
+}
+
+.bookingStatusBadge {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: var(--border);
+  color: var(--text);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* ── Sync Section ── */
+.syncSection {
+  max-width: 800px;
+  margin: 24px auto;
+  padding: 20px 24px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--bg) 98%, #ffffff 2%);
+}
+
+.syncSectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.syncIcon {
+  width: 20px;
+  height: 20px;
+  color: #4285f4;
+  flex-shrink: 0;
+}
+
+.syncSectionTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 0;
+}
+
+.syncDescription {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.5;
+  margin: 0 0 14px;
+}
+
+.syncNote {
+  font-size: 12px;
+  color: #ef4444;
+  margin: 0 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.syncNote::before {
+  content: '';
+  width: 14px;
+  height: 14px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ef4444'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+
+.syncControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.syncControls > label {
+  margin-left: auto;
+}
+
+/* ── Compact Sync Buttons ── */
+.btnConnect,
+.btnDisconnect,
+.btnGreen {
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 6px;
+}
+
+.btnConnect {
+  background-color: #4285f4;
+  color: white;
+}
+
+.btnDisconnect {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.btnGreen {
+  background-color: #22c55e;
+  color: white;
+}
+
+.btnGreen:hover:not(:disabled) {
+  background-color: #16a34a;
+}
+
+/* ── Sync Status Indicator ── */
+.syncStatus {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text);
+  padding-right: 4px;
+}
+
+.syncStatusDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  flex-shrink: 0;
+}
+
+.syncStatusDotPulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .5; }
+}
+
+/* ── Custom checkboxes ── */
+.customCheckbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.customCheckbox input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #22c55e;
+  cursor: pointer;
+}
+
+/* ── Small buttons ── */
+.smallBtn {
+  padding: 6px 12px !important;
+  font-size: 13px !important;
+}
+
+/* ── Utilities ── */
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 600px) {
+  .bookingsHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .syncSection {
+    padding: 16px;
+  }
+}

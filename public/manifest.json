@@ -1,0 +1,17 @@
+{
+  "name": "Suparbox",
+  "short_name": "Suparbox",
+  "description": "Arbox class scheduler",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#0d6efd",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "type": "image/png",
+      "sizes": "any",
+      "purpose": "any"
+    }
+  ]
+}

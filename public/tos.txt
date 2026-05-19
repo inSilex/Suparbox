@@ -1,0 +1,8 @@
+Terms of Service & Privacy Policy
+
+Last updated: May 19, 2026
+
+This application ("Suparbox") is provided as-is without any warranty or guarantee of functionality. By using this app you agree that the developers and contributors are not liable for any damages, data loss, scheduling conflicts, or other consequences arising from its use. Use at your own risk.
+
+Privacy: This app does not collect, store, or transmit any personal data beyond what is necessary to communicate with the Arbox platform API (authentication tokens and calendar sync data). No analytics, no tracking cookies, no third-party services. The only data handled are your Arbox login credentials and Google Calendar OAuth tokens, which are stored locally on your device using IndexedDB and localStorage.
+

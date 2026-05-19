@@ -1,0 +1,318 @@
+.hiddenTab {
+  display: none !important;
+}
+
+.btn {
+  border-radius: 8px;
+  padding: 12px 18px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font: inherit;
+  background: transparent;
+  color: var(--text-h);
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.05s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.app {
+  min-height: 100svh;
+}
+
+.page {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 16px 20px 48px;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.topbarInner {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.topbarLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.brandLogo {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.profileLine {
+  font-size: 14px;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.profileName {
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+.profileEmail {
+  opacity: 0.7;
+}
+
+.btnLogout {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  color: #ef4444;
+  font-size: 14px;
+}
+.btnLogout:hover {
+  background: rgba(239, 68, 68, 0.15) !important;
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+.btnLogoutIcon {
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .btnLogout {
+    padding: 6px !important;
+    min-width: 32px;
+    justify-content: center;
+  }
+  .btnLogout:hover {
+    background: rgba(239, 68, 68, 0.15) !important;
+    color: #ef4444 !important;
+    border-color: rgba(239, 68, 68, 0.4);
+  }
+  .btnLogoutLabel {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .profileEmail {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .btnLogout {
+    padding: 8px !important;
+    min-width: 40px;
+    justify-content: center;
+  }
+  .btnLogoutLabel {
+    display: none;
+  }
+  .btnLogoutIcon {
+    display: block;
+  }
+  .profileLine {
+    font-size: 13px;
+  }
+}
+
+.muted {
+  color: var(--text);
+  opacity: 0.85;
+}
+
+.topbarRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.messagesBadge {
+  font-size: 14px;
+  color: var(--text-h);
+  white-space: nowrap;
+}
+
+.messagesCount {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.topbarNav {
+  display: flex;
+  gap: 8px;
+}
+
+.navItem {
+  position: relative;
+}
+
+.navBtn {
+  background: var(--social-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  color: var(--text-h);
+  font-size: 14px;
+}
+
+.navBtn:hover {
+  background: var(--border);
+}
+
+.navBtnLabel {
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (min-width: 1024px) {
+  .navBtnLabel {
+    max-width: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .navBtnLabel {
+    display: none;
+  }
+}
+
+.navDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  z-index: 1000;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  padding: 4px;
+}
+
+.dropdownItem {
+  background: none;
+  border: none;
+  padding: 10px 12px;
+  text-align: left;
+  cursor: pointer;
+  color: var(--text);
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.dropdownItem:hover {
+  background: var(--social-bg);
+}
+
+.dropdownItem.active {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.dropdownOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+}
+
+.desktopOnly {
+  @media (max-width: 600px) {
+    display: none !important;
+  }
+}
+
+.active {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 8px 20px;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+
+.footer a {
+  color: var(--text);
+  text-decoration: underline;
+  font-size: 13px;
+  opacity: 0.7;
+  transition: opacity 0.15s ease, color 0.15s ease;
+}
+
+.footer a:hover {
+  opacity: 1;
+  color: var(--accent);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+}
+
+.footerItem {
+  margin-right: 8px;
+}
+
+.footerSeparator {
+  color: var(--text);
+  opacity: 0.7;
+  font-size: 13px;
+  margin: 0 8px;
+}
+
+.footer a:last-child {
+  margin-left: 8px;
+}

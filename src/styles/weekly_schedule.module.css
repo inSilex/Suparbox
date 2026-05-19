@@ -1,0 +1,388 @@
+/* Weekly Schedule */
+.scheduleHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: none;
+  margin: 0 auto 8px;
+}
+
+.scheduleHeaderCenter {
+  text-align: center;
+  flex: 1;
+}
+
+.scheduleSubtitle {
+  font-size: 13px;
+  color: var(--text);
+}
+
+.scheduleNavBtn {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: var(--text-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  box-sizing: border-box;
+}
+
+.scheduleNavBtn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.weekGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  width: 100%;
+}
+
+.dayColumn {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.dayHeader {
+  text-align: center;
+  padding-bottom: 8px;
+}
+
+.dayHeaderTop {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dayName {
+  font-weight: 700;
+  color: var(--text-h);
+  font-size: 14px;
+}
+
+.dayDate {
+  font-size: 12px;
+  color: var(--text);
+}
+
+.dayLessons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 100px;
+}
+
+/* Lesson Row */
+.lessonRow {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+}
+
+.lessonRowPast {
+  opacity: 0.6;
+}
+.lessonRowBooked {
+  border-color: var(--accent);
+}
+.lessonRowStandby {
+  border-style: dashed;
+}
+.lessonRowDisabled {
+  opacity: 0.5;
+  filter: grayscale(1);
+}
+.lessonHighlight {
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.lessonTime {
+  font-size: 12px;
+  color: var(--text);
+  font-weight: 700;
+}
+.lessonClub {
+  font-size: 13px;
+  color: var(--text-h);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.lessonInstructorName {
+  font-size: 12px;
+  color: var(--text);
+}
+.lessonBookings {
+  font-size: 11px;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+}
+
+.friendAvatarsInline {
+  margin-left: 6px;
+}
+.lessonWaitlist {
+  font-size: 10px;
+  color: var(--text);
+  opacity: 0.8;
+}
+
+.lessonInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.lessonActions {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 82px;
+  min-width: 82px;
+  max-width: 82px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Friend Avatars */
+.friendAvatars {
+  display: inline-flex;
+  gap: 0;
+}
+
+.friendAvatarsInline {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 6px;
+}
+
+.friendAvatarWrapper {
+  position: relative;
+}
+
+.friendAvatarImg,
+.friendAvatarFallback {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  overflow: hidden;
+}
+
+.friendAvatarImg {
+  object-fit: cover;
+  border: 1.5px solid var(--bg);
+}
+
+.friendAvatarFallback {
+  text-transform: uppercase;
+}
+
+.friendAvatarOverflow {
+  font-size: 8px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.friendAvatars .friendAvatarWrapper:not(:first-child) {
+  margin-left: -6px;
+}
+
+.friendTooltip {
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  z-index: 10;
+}
+
+.friendAvatarWrapper:hover .friendTooltip {
+  opacity: 1;
+}
+
+/* Mobile Schedule */
+.mobileSchedule {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .weekGrid {
+    display: none;
+  }
+  .mobileSchedule {
+    display: block;
+  }
+}
+
+/* Mobile Day Picker */
+.mobileDayPicker {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px;
+  gap: 3px;
+}
+
+.dayChip {
+  flex: 1;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4px 2px;
+  color: var(--text-h);
+}
+
+.dayChipEmpty {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.dayChipSelected {
+  background: var(--accent);
+  color: #fff !important;
+  border-color: var(--accent);
+}
+
+.dayChipAbbr {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.dayChipDate {
+  font-size: 9px;
+  opacity: 0.8;
+}
+
+/* Selected Day Card */
+.selectedDayCard {
+  margin: 8px;
+  padding: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.selectedDayTitle {
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.selectedDayList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.selectedLesson {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.selectedLessonPast {
+  opacity: 0.6;
+}
+.selectedLessonBooked {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 5%, transparent);
+}
+.selectedLessonHighlight {
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.selectedLessonInfo {
+  flex: 1;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  min-width: 0;
+}
+.selectedLessonTime {
+  font-weight: 700;
+  min-width: 60px;
+}
+.selectedLessonDetails {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.selectedLessonInstructor {
+  font-size: 14px;
+  color: var(--text-h);
+  font-weight: 600;
+}
+.selectedLessonInstructorName {
+  font-size: 13px;
+  color: var(--text);
+}
+.selectedLessonBookings {
+  font-size: 12px;
+  color: var(--accent);
+}
+.selectedLessonWaitlist {
+  font-size: 11px;
+  color: var(--text);
+  opacity: 0.8;
+}
+
+.selectedLessonActions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  width: 82px;
+  min-width: 82px;
+  max-width: 82px;
+  justify-content: center;
+}
+
+.btnMobile {
+  flex: 0 0 auto;
+  padding: 8px 12px;
+  font-size: 12px !important;
+  width: 100%;
+}
+
+/* Lesson Action Buttons */
+.lessonActionsRow {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
